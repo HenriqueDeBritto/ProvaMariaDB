@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `loja_produtos` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; --Criação do banco de forma automatica
+CREATE DATABASE IF NOT EXISTS `loja_produtos` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE `loja_produtos`;
 
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `preco` DECIMAL(10, 2) NOT NULL,
   `quantidade` INT NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB; --criação de tabela
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS `historico_alteracoes` (
   `id` INT NOT NULL AUTO_INCREMENT,

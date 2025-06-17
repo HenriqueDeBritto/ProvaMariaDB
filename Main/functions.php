@@ -13,7 +13,7 @@ function get_product_by_id($id){
     $pdo = db_connect();
     $sql = "SELECT id, nome, descricao, preco, quantidade FROM produtos WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->blindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
@@ -25,7 +25,7 @@ function get_product_history($id_produto){
             WHERE id_produto = :id_produto
             ORDER BY data_alteracao DESC";
     $stmt = $pdo->prepare($sql);
-    $stmt->blindParam(':id_produto', $id_produto, PDO::PARAM_INT);
+    $stmt->bindParam(':id_produto', $id_produto, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
