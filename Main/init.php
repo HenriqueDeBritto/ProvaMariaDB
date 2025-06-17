@@ -17,6 +17,6 @@ function db_connect(){
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException) {
-        die('Erro na conexao'. $e->getMessage());
+        die('Erro na conexao: '. $e->getMessage());
     }
 }
